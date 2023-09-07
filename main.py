@@ -140,8 +140,6 @@ def getAuth(partner, proxy):
     try:
         response = requests.post(url, headers=headers,
                                  data=param, proxies=proxies, timeout=5)
-        print(proxy, param["unique_id"], response.status_code,
-              response.text)  # This is development
         if response.status_code == 200:
             saveAuth.append(response.json())
         elif response.status_code >= 400:
